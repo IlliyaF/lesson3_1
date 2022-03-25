@@ -10,10 +10,6 @@ public interface IntList {
     boolean set (int index, int element);
     int size ();
     int[] subList (int fromIndex, int toIndex);
-    default char contains(int i) {
-        return 0;
-    }
-
     int [] toArray ();
 
 }
