@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class IntArrayList implements IntList {
 
-    private ArrayList<Integer> myArrList = new ArrayList ();
+    private final ArrayList<Integer> myArrList = new ArrayList ();
     @Override
     public boolean add(int element) {
         if (element == 0) {
             return false;
         } else {
-            myArrList.add(element);
+            myArrList.add(myArrList.size(), element);
             return true;
         }
     }
@@ -25,58 +25,61 @@ public class IntArrayList implements IntList {
 
     @Override
     public int get(int index) {
-        myArrList.get(index);
-        return 0;
+
+        return myArrList.get(index);
     }
 
     @Override
     public boolean isEmpty() {
-        myArrList.isEmpty();
-        return true;
+
+        return myArrList.isEmpty();
     }
 
     @Override
     public boolean remove(int index) {
         myArrList.remove(index);
-        return false;
+        return true;
     }
 
     @Override
     public boolean removeByValue(int value) {
         myArrList.removeIf(integer -> integer == value);
-        return false;
+        return true;
     }
 
     @Override
     public boolean set(int index, int element) {
         myArrList.set(index, element);
-        return false;
+        return true;
     }
 
     @Override
     public int size() {
-        myArrList.size();
-                return 0;
+
+        return myArrList.size();
     }
 
     @Override
-    public IntList subList(int fromIndex, int toIndex) {
+    public int[] subList(int fromIndex, int toIndex) {
+        ArrayList <Integer> myArr = new ArrayList(myArrList.subList(fromIndex, toIndex));
 
-         myArrList.subList(fromIndex, toIndex);
+        int[] ints = new int[myArr.size()];
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = myArr.get(i);
+        }
 
-        return null;
+        return ints;
     }
 
-    @Override
-    public char contains(int i) {
-        IntList.super.contains(i);
-        return 0;
-    }
 
     @Override
     public int[] toArray() {
-        myArrList.toArray();
+       //myArrList.toArray();
+       int[] ints = new int[myArrList.size()];
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = myArrList.get(i);
+        }
 
-        return new int[0];
+        return ints;
     }
 }

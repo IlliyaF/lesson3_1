@@ -9,7 +9,7 @@ public interface IntList {
     boolean removeByValue (int value);
     boolean set (int index, int element);
     int size ();
-    IntList subList (int fromIndex, int toIndex);
+    int[] subList (int fromIndex, int toIndex);
     default char contains(int i) {
         return 0;
     }

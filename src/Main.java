@@ -44,19 +44,19 @@ public class Main {
 
         //Demonstration of the work of the boolean method "removeIf (Predicate<? super E> filter)" and
         //print of the results
-        System.out.println('\n' + "Remove the elements less than 50: " + myList.removeByValue(66) + '\n');
-        myList.set(4,57);
+        System.out.println('\n' + "Remove the element with value 66: " + myList.removeByValue(66) + '\n');
+        //myList.set(4,57);
         printArrayState (myList);
 
         //Demonstration of the work of the method "size ()" and
         //print of the results
         System.out.println('\n' + "Size of the Array: " + myList.size() + '\n');
 
-        //Demonstration of the work of the method "subList ()" and
-        //print of the result - "true" if list from 0 to 5 contains 57,
-        //remove elements 0-5
-        System.out.println('\n' + "Size of the Array: " + myList.subList(0, 5).contains(57) + '\n');
-        myList.subList(0, 5).clear();
+        //Demonstration of the work of the method "subList ()"
+        //It chooses elements 0-5
+        String sm =  Arrays.toString(myList.subList(0, 5));
+        System.out.println('\n' + "Choose elements 0 - 5: " + sm + '\n');
+
         printArrayState (myList);
 
         //Demonstration of the work of the method "toArray ()"
